@@ -1,9 +1,32 @@
-extensions: {}
+extensions:
+  TemplateHaskell: true
+  PackageImports: true
+  ImplicitPrelude: false
+  MultiParamTypeClasses: true
+  DeriveDataTypeable: true
+  TypeFamilies: true
+  QuasiQuotes: true
+  ViewPatterns: true
+  FlexibleContexts: true
+  OverloadedStrings: true
 cabal-file: project.cabal
+extra-packages: ''
 version: 1
-environment: null
+environment: ghc-7.4.2-stable-13.09
 module-template: ! 'module MODULE_NAME where
 
 '
-ghc-args: []
-modules: {}
+ghc-args:
+- -Wall
+- -fno-warn-orphans
+modules:
+  Foundation:
+    filename: src/Foundation.hs
+  Import:
+    filename: src/Import.hs
+  Handler.Home:
+    filename: src/Handler/Home.hs
+  Application:
+    filename: src/Application.hs
+  Handler.AES:
+    filename: src/Handler/AES.hs
